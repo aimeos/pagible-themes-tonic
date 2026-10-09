@@ -173,7 +173,7 @@ class TonicDemo extends AbstractDemo
                 'columns' => '3',
                 'cards' => [
                     ['title' => 'Bartender (m/f/d)', 'text' => "**Full or part time**\nYou know your classics and love talking to guests. We teach you the rest."],
-                    ['title' => 'Barback (m/f/d)', 'text' => "**Part time, Thu to Sat**\nIce, glassware and prep. The best way into a career behind the bar."],
+                    ['title' => 'Barback (m/f/d)', 'text' => "**Part time, Thu to Sat**\nIce, glassware and prep for the bar. The best way into a career with us."],
                     ['title' => 'Host (m/f/d)', 'text' => "**Part time, evenings**\nYou greet every guest at the door and keep the room running smoothly."],
                 ],
             ]],
@@ -277,7 +277,7 @@ class TonicDemo extends AbstractDemo
                         'file' => ['id' => $this->img( 'two-cocktails' ), 'type' => 'file'],
                         'prices' => [['id' => 'round', 'kind' => 'once', 'currency' => 'EUR', 'amount' => 50, 'label' => '€50']],
                         'text' => 'Four cocktails, one evening.',
-                        'features' => "- Any drink on the menu\n- Bar snacks included\n- Valid for three years",
+                        'features' => "- Any drink on the menu\n- Bar snacks included\n- Table booking on request\n- Valid for three years",
                         'url' => 'mailto:hello@brasshour.example?subject=Gift%20card',
                         'button' => 'Order round for two',
                     ],
@@ -286,7 +286,7 @@ class TonicDemo extends AbstractDemo
                         'file' => ['id' => $this->img( 'bartender-shake' ), 'type' => 'file'],
                         'prices' => [['id' => 'class', 'kind' => 'once', 'currency' => 'EUR', 'amount' => 140, 'label' => '€140']],
                         'text' => 'Classic cocktails for two.',
-                        'features' => "- Three hours behind the bar\n- Six cocktails each\n- Recipe booklet and a jigger\n- Free choice of date",
+                        'features' => "- Three hours behind the bar\n- Six cocktails each\n- Recipe booklet and jigger\n- Free choice of date",
                         'url' => 'mailto:hello@brasshour.example?subject=Gift%20card',
                         'button' => 'Order a masterclass',
                         'highlight' => true,
@@ -297,7 +297,7 @@ class TonicDemo extends AbstractDemo
                         'file' => ['id' => $this->img( 'champagne' ), 'type' => 'file'],
                         'prices' => [['id' => 'value', 'kind' => 'once', 'currency' => 'EUR', 'amount' => 25, 'label' => 'from €25']],
                         'text' => 'You choose the amount.',
-                        'features' => "- In steps of €25\n- For drinks, food and events\n- Partial use possible",
+                        'features' => "- In steps of €25, any amount\n- For drinks, food and events\n- Partial use possible\n- Valid for three years",
                         'url' => 'mailto:hello@brasshour.example?subject=Gift%20card',
                         'button' => 'Order a gift card',
                     ],
@@ -334,7 +334,7 @@ class TonicDemo extends AbstractDemo
             'status' => 2,
         ], [
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
-                'text' => "# Imprint\n\n**Brass Hour Bar GmbH**\nPaul-Roosen-Straße 18\n22767 Hamburg\nGermany\n\nTelephone: +49 40 2345 6780\nEmail: hello@brasshour.example\n\nManaging directors: Malik Osei, Ingrid Halvorsen\nCommercial register: Hamburg Local Court, HRB 00000\nVAT ID: DE000000000\n\n## Protection of minors\n\nWe serve alcohol only to guests aged 18 and over and may ask for an ID.\n\n## Consumer dispute resolution\n\nWe are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.\n\nThis is a demo website for the Tonic theme. Brass Hour is a fictional bar and the people named are not real.",
+                'text' => "# Imprint\n\n**Brass Hour Bar GmbH**\nPaul-Roosen-Straße 18\n22767 Hamburg\nGermany\n\nTelephone: +49 40 2345 6780\nEmail: hello@brasshour.example\n\nManaging directors: Malik Osei, Ingrid Lund\nCommercial register: Hamburg Local Court, HRB 00000\nVAT ID: DE000000000\n\n## Protection of minors\n\nWe serve alcohol only to guests aged 18 and over and may ask for an ID.\n\n## Consumer dispute resolution\n\nWe are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.\n\nThis is a demo website for the Tonic theme. Brass Hour is a fictional bar and the people named are not real.",
             ]],
         ], $home );
 
@@ -360,9 +360,9 @@ class TonicDemo extends AbstractDemo
             "Equal parts gin, Campari and sweet vermouth: the Negroni is the easiest classic to make and the easiest to get slightly wrong. Most home Negronis are too warm, too diluted or too sweet.\n\nOur house recipe leans a little drier with a dash more gin, uses a fresh bottle of vermouth from the fridge and is stirred, never shaken, over one big piece of clear ice.",
             'negroni-2',
             [
-                ['title' => '35:25:25', 'text' => 'Gin, Campari and vermouth in millilitres'],
+                ['title' => '35:25:25', 'text' => 'Gin, Campari, vermouth in ml'],
                 ['title' => '30 s', 'text' => 'Stirring time on plenty of ice'],
-                ['title' => '1', 'text' => 'Big ice cube in the glass, never crushed'],
+                ['title' => '1', 'text' => 'One big cube, never crushed'],
             ],
             [
                 ['label' => 'Step 1', 'title' => 'Chill', 'text' => 'Put a rocks glass in the freezer for ten minutes.'],
@@ -412,7 +412,7 @@ class TonicDemo extends AbstractDemo
             [
                 ['title' => '6', 'text' => 'Low and no drinks on the menu'],
                 ['title' => '0.0 %', 'text' => 'Alcohol in our zero-proof drinks'],
-                ['title' => '1 in 3', 'text' => 'Guests ordering at least one of them'],
+                ['title' => '1 in 3', 'text' => 'Guests who order at least one'],
             ],
             [
                 ['label' => 'Base', 'title' => 'Bitter or savoury', 'text' => 'Tea, verjus, a shrub or an alcohol-free aperitif.'],
@@ -486,7 +486,7 @@ class TonicDemo extends AbstractDemo
                         'file' => ['id' => $this->img( 'bottles-2' ), 'type' => 'file'],
                         'prices' => [['id' => 'whisky', 'amount' => 89, 'label' => '€89']],
                         'text' => '2 hours, for everyone.',
-                        'features' => "- Six whiskies from four countries\n- Grain, cask and age\n- Water or no water\n- A dram of something rare",
+                        'features' => "- Six whiskies, four countries\n- Grain, malt, cask and age\n- Water or no water\n- A dram of something rare",
                         'url' => 'mailto:classes@brasshour.example',
                         'button' => 'Book whisky tasting',
                     ],
@@ -554,15 +554,15 @@ class TonicDemo extends AbstractDemo
                     ],
                     [
                         'name' => 'Classics',
-                        'prices' => [['id' => 'classics', 'label' => 'The way they should be']],
-                        'text' => 'Stirred over clear ice or shaken hard.',
+                        'prices' => [['id' => 'classics', 'label' => 'Done right']],
+                        'text' => 'Stirred over clear ice or shaken hard, always fresh.',
                         'features' => "- Negroni **12.00**\n- Old fashioned **13.00**\n- Dry martini **13.00**\n- Daiquiri **11.00**\n- Whisky sour **12.00**",
                     ],
                     [
                         'name' => 'Low & no',
                         'prices' => [['id' => 'low', 'label' => 'Full flavour']],
-                        'text' => 'Same craft, little or no alcohol.',
-                        'features' => "- Americano `LOW` **9.00**\n- Sherry cobbler `LOW` **10.00**\n- Garden Tonic `0.0` **8.00**\n- Verjus Sour `0.0` **8.00**",
+                        'text' => 'The same craft, with little or no alcohol.',
+                        'features' => "- Americano `LOW` **9.00**\n- Adonis `LOW` **10.00**\n- Bamboo `LOW` **10.00**\n- Rose Tonic `0.0` **8.00**\n- Verjus Sour `0.0` **8.00**",
                     ],
                 ],
             ]],
@@ -573,22 +573,22 @@ class TonicDemo extends AbstractDemo
                         'name' => 'Wine & bubbles',
                         'file' => ['id' => $this->img( 'wine' ), 'type' => 'file'],
                         'prices' => [['id' => 'wine', 'label' => 'By the glass']],
-                        'text' => 'Natural and low-intervention wines.',
-                        'features' => "- Grower champagne **16.00**\n- Riesling, Mosel **9.00**\n- Orange wine, Slovenia **10.00**\n- Gamay, Beaujolais **9.50**",
+                        'text' => 'Natural, low-intervention wines.',
+                        'features' => "- Champagne **16.00**\n- Mosel Riesling **9.00**\n- Orange wine **10.00**\n- Beaujolais **9.50**",
                     ],
                     [
                         'name' => 'Beer & cider',
                         'file' => ['id' => $this->img( 'bar-counter' ), 'type' => 'file'],
                         'prices' => [['id' => 'beer', 'label' => 'Local taps']],
-                        'text' => 'From breweries in Hamburg.',
-                        'features' => "- Pilsner, 0.3 l **4.50**\n- Pale ale, 0.3 l **5.50**\n- Dry cider, 0.33 l **5.50**\n- Alcohol-free lager `0.0` **4.50**",
+                        'text' => 'From small Hamburg breweries.',
+                        'features' => "- Pilsner, 0.3 l **4.50**\n- Pale ale, 0.3 l **5.50**\n- Dry cider, 0.33 l **5.50**\n- Zero lager `0.0` **4.50**",
                     ],
                     [
                         'name' => 'Bar snacks',
                         'file' => ['id' => $this->img( 'snack-board' ), 'type' => 'file'],
                         'prices' => [['id' => 'snacks', 'label' => 'Until 01:00']],
-                        'text' => 'Small plates to share.',
-                        'features' => "- Gordal olives `VG` **5.00**\n- Smoked almonds `VG` `N` **5.00**\n- Cheese and charcuterie board **16.00**\n- Truffle fries `V` **8.00**",
+                        'text' => 'Small plates to share with friends.',
+                        'features' => "- Gordal olives `VG` **5.00**\n- Almonds `VG` `N` **5.00**\n- Charcuterie **16.00**\n- Truffle fries `V` **8.00**",
                     ],
                 ],
             ]],
@@ -663,8 +663,8 @@ class TonicDemo extends AbstractDemo
                 'title' => 'Three ways to celebrate',
                 'columns' => '3',
                 'cards' => [
-                    ['title' => 'The Vault', 'text' => "**Up to 24 guests**\nOur private room in the old foundry vault, with its own bar and record player.", 'file' => ['id' => $this->img( 'lounge' ), 'type' => 'file']],
-                    ['title' => 'Full buyout', 'text' => "**Up to 120 guests**\nThe whole bar, the team and the music. Sunday to Thursday only.", 'file' => ['id' => $this->img( 'toast' ), 'type' => 'file']],
+                    ['title' => 'The Vault', 'text' => "**Up to 24 guests**\nOur private room in the old foundry vault, with its own bar and a record player.", 'file' => ['id' => $this->img( 'lounge' ), 'type' => 'file']],
+                    ['title' => 'Full buyout', 'text' => "**Up to 120 guests**\nThe whole bar, our team and the music, just for you. Sunday to Thursday only.", 'file' => ['id' => $this->img( 'toast' ), 'type' => 'file']],
                     ['title' => 'Bar takeover', 'text' => "**At your place**\nTwo of our bartenders, a mobile bar and a menu for your event anywhere in Hamburg.", 'file' => ['id' => $this->img( 'bartender-pouring' ), 'type' => 'file']],
                 ],
             ]],
@@ -694,7 +694,7 @@ class TonicDemo extends AbstractDemo
                         'name' => 'Bar takeover',
                         'prices' => [['id' => 'takeover', 'amount' => 1200, 'label' => 'from €1,200']],
                         'text' => 'Three hours, 50 guests.',
-                        'features' => "- Two bartenders and a mobile bar\n- Glassware and clear ice\n- Up to 150 drinks included\n- Set-up and clean-up",
+                        'features' => "- Two bartenders, mobile bar\n- Glassware and clear ice\n- Up to 150 drinks included\n- Set-up and clean-up",
                         'url' => '#private-request',
                         'button' => 'Ask for a quote',
                     ],
@@ -875,11 +875,11 @@ class TonicDemo extends AbstractDemo
             'title' => 'Crafted, never rushed',
             'layout' => 'badges',
             'cards' => [
-                ['title' => 'Hand-cut ice', 'text' => '90 kg of clear ice a day', 'file' => $this->icon( 'ice' )],
+                ['title' => 'Hand-cut ice', 'text' => 'Clear ice cut by hand, 90 kg a day', 'file' => $this->icon( 'ice' )],
                 ['title' => 'Seasonal menu', 'text' => 'Changing four times a year', 'file' => $this->icon( 'leaf' )],
                 ['title' => 'Walk-ins welcome', 'text' => 'The bar is never booked out', 'file' => $this->icon( 'door' )],
                 ['title' => 'Low & no', 'text' => 'Six drinks with little or no alcohol', 'file' => $this->icon( 'glass' )],
-                ['title' => 'Live music', 'text' => 'Jazz every Wednesday', 'file' => $this->icon( 'music' )],
+                ['title' => 'Live music', 'text' => 'A jazz trio every Wednesday', 'file' => $this->icon( 'music' )],
             ],
         ]];
     }
@@ -956,9 +956,9 @@ class TonicDemo extends AbstractDemo
                 'layout' => 'figures',
                 'cards' => [
                     ['title' => '2016', 'text' => 'Pouring drinks in Altona'],
-                    ['title' => '8', 'text' => 'Signatures, new every season'],
-                    ['title' => '90 kg', 'text' => 'Of clear ice cut by hand daily'],
-                    ['title' => '03:00', 'text' => 'Last call on weekends'],
+                    ['title' => '8', 'text' => 'Seasonal signatures'],
+                    ['title' => '90 kg', 'text' => 'Of clear ice cut every day'],
+                    ['title' => '03:00', 'text' => 'Last call on the weekend'],
                 ],
             ]],
             $this->signatures(),
@@ -972,9 +972,9 @@ class TonicDemo extends AbstractDemo
                 'title' => 'What\'s on',
                 'columns' => '3',
                 'cards' => [
-                    ['title' => 'Live jazz', 'text' => "**Every Wednesday · 20:30**\nThe Elbe Street Trio in the back room, two sets, no cover charge.", 'url' => '/events', 'file' => ['id' => $this->img( 'jazz' ), 'type' => 'file']],
-                    ['title' => 'Vinyl night', 'text' => "**Every Thursday · 21:00**\nBring a record and we play it. The best pick drinks on the house.", 'url' => '/events', 'file' => ['id' => $this->img( 'vinyl' ), 'type' => 'file']],
-                    ['title' => 'Negroni Sunday', 'text' => "**Every Sunday · from 17:00**\nThe Negroni and its cousins for €9, all evening long.", 'url' => '/events', 'file' => ['id' => $this->img( 'negroni' ), 'type' => 'file']],
+                    ['title' => 'Live jazz', 'text' => "**Wednesday · 20:30**\nThe Elbe Street Trio in the back room, two sets, no cover charge.", 'url' => '/events', 'file' => ['id' => $this->img( 'jazz' ), 'type' => 'file']],
+                    ['title' => 'Vinyl night', 'text' => "**Thursday · 21:00**\nBring a record and we play it. The best pick of the night drinks free.", 'url' => '/events', 'file' => ['id' => $this->img( 'vinyl' ), 'type' => 'file']],
+                    ['title' => 'Negroni Sunday', 'text' => "**Sunday · 17:00**\nThe Negroni and all of its cousins for €9, all evening long.", 'url' => '/events', 'file' => ['id' => $this->img( 'negroni' ), 'type' => 'file']],
                 ],
             ]],
             $this->ethos(),
@@ -1267,7 +1267,7 @@ SVG;
                     'name' => 'Altona Spritz',
                     'file' => ['id' => $this->img( 'red-cocktail' ), 'type' => 'file'],
                     'prices' => [['id' => 'spritz', 'amount' => 12, 'label' => '€12']],
-                    'text' => 'Bitter aperitivo, rhubarb, sparkling.',
+                    'text' => 'Aperitivo, rhubarb, sparkling.',
                     'features' => "- Blood orange peel\n- `bitter` `bright` `light`\n- Perfect to start the night",
                     'url' => '/menu',
                     'button' => 'Full menu',
@@ -1296,10 +1296,10 @@ SVG;
     protected function team() : array
     {
         $people = [
-            ['Malik Osei', 'bartender-1', "**Co-founder · Head bartender**\nWrites the seasonal menu and has tasted every gin in the house."],
-            ['Ingrid Halvorsen', 'bartender-2', "**Co-founder · Bar manager**\nRuns the room, the wine list and every private event in the Vault."],
-            ['Luca Romano', 'bartender-3', "**Bartender · Ice program**\nCuts 90 kg of clear ice a day and teaches our classic cocktails class."],
-            ['Selin Aydın', 'bartender-4', "**Bartender · Low & no**\nCreated our alcohol-free menu and makes the house cordials."],
+            ['Malik Osei', 'bartender-1', "**Head bartender**\nWrites the seasonal menu and knows every gin we stock."],
+            ['Ingrid Lund', 'bartender-2', "**Bar manager**\nRuns the room, the wine list and every private event in the Vault."],
+            ['Luca Romano', 'bartender-3', "**Ice program**\nCuts 90 kg of clear ice a day and teaches our classic cocktails class."],
+            ['Selin Aydın', 'bartender-4', "**Low & no menu**\nCreated our alcohol-free menu and makes the house cordials."],
         ];
 
         return ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [

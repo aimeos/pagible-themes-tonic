@@ -92,7 +92,7 @@ class TonicDemoTest extends ThemeTestAbstract
             $this->get( $path )->assertOk();
         }
 
-        $this->get( '/story' )->assertSee( 'Ingrid Halvorsen' );
+        $this->get( '/story' )->assertSee( 'Ingrid Lund' );
         $this->get( '/negroni-at-home' )->assertSee( 'Questions from our guests' );
     }
 
