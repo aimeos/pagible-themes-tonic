@@ -76,6 +76,17 @@ class TonicDemoTest extends ThemeTestAbstract
     }
 
 
+    public function testJournal() : void
+    {
+        $response = $this->get( '/journal' );
+
+        $response->assertOk();
+        $response->assertSee( 'class="list-item"', false );
+        $response->assertDontSee( '<summary class="active">Journal</summary>', false );
+        $response->assertSee( '<a href="http://localhost/journal" class="active">', false );
+    }
+
+
     public function testMenu() : void
     {
         $response = $this->get( '/menu' );

@@ -1199,7 +1199,7 @@ SVG;
         return $this->page( $data + [
             'lang' => 'en',
             'type' => 'blog',
-            'status' => 1,
+            'status' => 2,
         ], [
             $this->article( $title, $text, $this->img( $cover ) ),
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
