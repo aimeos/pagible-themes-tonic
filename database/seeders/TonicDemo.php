@@ -108,7 +108,7 @@ class TonicDemo extends AbstractDemo
                 'title' => 'Save yourself a seat',
                 'subtitle' => 'Book a table',
                 'text' => 'We keep half of our tables and the whole bar counter for walk-ins. For everything else, tell us when you come and we hold a table for you for 15 minutes.',
-                'files' => [['id' => $this->arch( 'candles' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'candles' ), 'type' => 'file']],
             ]],
             ['id' => 'booking-form', 'type' => 'contact', 'group' => 'main', 'data' => [
                 'title' => 'Your booking',
@@ -160,7 +160,7 @@ class TonicDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Send your application', 'url' => 'mailto:jobs@brasshour.example'],
                 ],
-                'files' => [['id' => $this->arch( 'bartender-shake' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'bartender-shake' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'bar-counter' ), 'type' => 'file'],
@@ -192,14 +192,14 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates the events page below the home page.
+     * Creates the events page and its sub-pages below the home page.
      *
      * @param Page $home Home page
      * @return static Same object for fluent calls
      */
     protected function addEvents( Page $home ) : static
     {
-        $this->page( [
+        $events = $this->page( [
             'lang' => 'en',
             'name' => 'What\'s on',
             'title' => 'What\'s On: Live Jazz, Vinyl Nights and Guest Shifts | Brass Hour Hamburg',
@@ -214,7 +214,7 @@ class TonicDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book a table', 'url' => '/book'],
                 ],
-                'files' => [['id' => $this->arch( 'jazz' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'jazz' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
                 'title' => 'Every week',
@@ -246,17 +246,19 @@ class TonicDemo extends AbstractDemo
             ]],
         ], $home );
 
-        return $this;
+        return $this->addPrivate( $events )
+            ->addMasterclasses( $events )
+            ->addGifts( $events );
     }
 
 
     /**
-     * Creates the gift cards page below the home page.
+     * Creates the gift cards page below the events page.
      *
-     * @param Page $home Home page
+     * @param Page $parent Events page
      * @return static Same object for fluent calls
      */
-    protected function addGifts( Page $home ) : static
+    protected function addGifts( Page $parent ) : static
     {
         $this->page( [
             'lang' => 'en',
@@ -309,7 +311,7 @@ class TonicDemo extends AbstractDemo
                     ['title' => 'Is there a digital version?', 'text' => 'Yes. We email you a PDF that you can print or forward.'],
                 ],
             ]],
-        ], $home );
+        ], $parent );
 
         return $this;
     }
@@ -430,12 +432,12 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates the masterclasses page below the home page.
+     * Creates the masterclasses page below the events page.
      *
-     * @param Page $home Home page
+     * @param Page $parent Events page
      * @return static Same object for fluent calls
      */
-    protected function addMasterclasses( Page $home ) : static
+    protected function addMasterclasses( Page $parent ) : static
     {
         $this->page( [
             'lang' => 'en',
@@ -453,7 +455,7 @@ class TonicDemo extends AbstractDemo
                     ['label' => 'Book a class', 'url' => 'mailto:classes@brasshour.example'],
                     ['label' => 'Gift cards', 'url' => '/gift-cards'],
                 ],
-                'files' => [['id' => $this->arch( 'bartender-pouring' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'bartender-pouring' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'pricing', 'group' => 'main', 'data' => [
                 'title' => 'Choose your class',
@@ -508,7 +510,7 @@ class TonicDemo extends AbstractDemo
                     ['title' => 'Is there a minimum age?', 'text' => 'All classes are for guests aged 18 and over.'],
                 ],
             ]],
-        ], $home );
+        ], $parent );
 
         return $this;
     }
@@ -537,6 +539,7 @@ class TonicDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book a table', 'url' => '/book'],
                 ],
+                'files' => [['id' => $this->portrait( 'two-cocktails' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'pricing', 'group' => 'main', 'data' => [
                 'title' => 'Cocktails',
@@ -632,12 +635,12 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates the private events page below the home page.
+     * Creates the private events page below the events page.
      *
-     * @param Page $home Home page
+     * @param Page $parent Events page
      * @return static Same object for fluent calls
      */
-    protected function addPrivate( Page $home ) : static
+    protected function addPrivate( Page $parent ) : static
     {
         $this->page( [
             'lang' => 'en',
@@ -654,7 +657,7 @@ class TonicDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Ask for a quote', 'url' => '#private-request'],
                 ],
-                'files' => [['id' => $this->arch( 'booth' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'booth' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Three ways to celebrate',
@@ -710,7 +713,7 @@ class TonicDemo extends AbstractDemo
                     ['field' => 'Anything else we should know', 'required' => false, 'input' => 'textarea'],
                 ],
             ]],
-        ], $home );
+        ], $parent );
 
         return $this;
     }
@@ -736,7 +739,7 @@ class TonicDemo extends AbstractDemo
                 'title' => 'Two bartenders and a forgotten cellar',
                 'subtitle' => 'Since 2016',
                 'text' => 'Malik and Ingrid met behind the bar of a hotel in Oslo. In 2016 they found the cellar of an old brass foundry in Altona, cleaned out a century of dust and opened the door on a Friday night.',
-                'files' => [['id' => $this->arch( 'door' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'door' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
                 'title' => 'How we got here',
@@ -795,7 +798,7 @@ class TonicDemo extends AbstractDemo
                     ['label' => 'Get directions', 'url' => 'https://www.openstreetmap.org/?mlat=53.5560&mlon=9.9570#map=17/53.5560/9.9570'],
                     ['label' => 'Call us', 'url' => 'tel:+494023456780'],
                 ],
-                'files' => [['id' => $this->arch( 'cellar' ), 'type' => 'file']],
+                'files' => [['id' => $this->portrait( 'cellar' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Opening hours',
@@ -834,12 +837,12 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates (once) an arched 4:5 hero image and returns its file ID.
+     * Creates (once) a 4:5 portrait hero image and returns its file ID.
      *
      * @param string $key PHOTOS key
      * @return string File ID
      */
-    protected function arch( string $key ) : string
+    protected function portrait( string $key ) : string
     {
         return $this->cropped( $key, 960, 1200, true, [480, 960] );
     }
@@ -1167,9 +1170,6 @@ SVG;
 
         $this->addMenu( $home )
             ->addEvents( $home )
-            ->addPrivate( $home )
-            ->addMasterclasses( $home )
-            ->addGifts( $home )
             ->addStory( $home )
             ->addVisit( $home )
             ->addJournal( $home )

@@ -13,7 +13,7 @@ php artisan vendor:publish --tag=cms-theme
 
 ## Design
 
-- **Style**: Speakeasy and Art Deco, with an oxblood announcement bar, a near-black background, full-bleed image heroes, brass diamond ornaments above section headings, cocktail menu boards with dotted price leaders, brass-framed images and a dark footer with the address, late opening hours and a responsible drinking notice
+- **Style**: Speakeasy and Art Deco, with an oxblood announcement bar, a near-black background, full-bleed image heroes, brass diamond ornaments above section headings, cocktail menu boards with dotted price leaders, hero images in chamfered Art Deco brass frames and a dark footer with the address, late opening hours and a responsible drinking notice
 - **Colors**: Night (#14110F), cream (#EDE4D3), brass (#C9A45C) and oxblood (#8E2B3A)
 - **Typography**: Didone display headings (Didot, Bodoni), system sans-serif body and uppercase, letter-spaced labels and navigation
 - **Borders**: Sharp corners, thin brass outlines with inset frames and double brass rules

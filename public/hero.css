@@ -153,8 +153,27 @@
 
 .hero .second:not(.multiple) picture {
     display: block;
+    position: relative;
+    isolation: isolate;
     width: fit-content;
     margin: 3rem auto 0;
+    padding: 0.5rem;
+}
+
+.hero .second:not(.multiple) picture::before,
+.hero .second:not(.multiple) picture::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: var(--pico-primary);
+    clip-path: polygon(3rem 0, calc(100% - 3rem) 0, 100% 3rem, 100% calc(100% - 3rem), calc(100% - 3rem) 100%, 3rem 100%, 0 calc(100% - 3rem), 0 3rem);
+}
+
+.hero .second:not(.multiple) picture::after {
+    inset: 1px;
+    background-color: var(--pico-background-color);
+    clip-path: polygon(2.95rem 0, calc(100% - 2.95rem) 0, 100% 2.95rem, 100% calc(100% - 2.95rem), calc(100% - 2.95rem) 100%, 2.95rem 100%, 0 calc(100% - 2.95rem), 0 2.95rem);
 }
 
 .hero .second img {
@@ -163,11 +182,9 @@
 
 .hero .second:not(.multiple) img {
     aspect-ratio: 4 / 5;
-    max-height: 38rem;
+    max-height: 37rem;
     object-fit: cover;
-    border-radius: 20rem 20rem 0 0;
-    padding: 0.5rem;
-    border: 1px solid var(--pico-primary);
+    clip-path: polygon(2.7rem 0, calc(100% - 2.7rem) 0, 100% 2.7rem, 100% calc(100% - 2.7rem), calc(100% - 2.7rem) 100%, 2.7rem 100%, 0 calc(100% - 2.7rem), 0 2.7rem);
 }
 
 .hero .second.multiple {

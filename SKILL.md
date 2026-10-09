@@ -22,7 +22,7 @@ Use a dark, intimate layout that feels like stepping down into the bar at night.
 
 ## Components
 
-- Hero: on the home page a full-bleed `background` image of the room with the `zoom` animation, an eyebrow naming the bar and district, a short headline with an italic accent and two actions ("Book a table" and "See the menu"); on other pages one portrait image in `files`, shown with an arched brass frame.
+- Hero: on the home page a full-bleed `background` image of the room with the `zoom` animation, an eyebrow naming the bar and district, a short headline with an italic accent and two actions ("Book a table" and "See the menu"); on other pages one portrait image in `files`, shown in an Art Deco frame with chamfered corners and a brass hairline. Nest secondary pages (private events, masterclasses, gift cards) below a top-level page so the header keeps about five links next to "Book a table".
 - Figures and badges: cards in the `figures` layout for opening year, signatures, ice or last call, and in the `badges` layout with brass line icons for ice, seasonal menus, walk-ins, low and no drinks and live music.
 - Signatures: a `pricing` element with three cocktails, each with a photo, the price, the main ingredients and flavour notes as inline code pills, the middle one highlighted with a badge.
 - Menu: `pricing` elements as menu boards, one item per section, features as list items ending with a bold price and tags such as `LOW`, `0.0`, `V` or `VG` as inline code, followed by a text element with the tag legend, the age limit and allergen note.
