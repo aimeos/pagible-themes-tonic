@@ -25,7 +25,7 @@ php artisan vendor:publish --tag=cms-theme
 |------|-------------|
 | `page` | Landing, menu, events, private events, masterclasses and visit pages |
 | `docs` | Documentation with sidebar navigation |
-| `blog` | Journal posts listed by the blog element |
+| `blog` | Bar notes posts listed by the blog element |
 
 ## Bar Details
 

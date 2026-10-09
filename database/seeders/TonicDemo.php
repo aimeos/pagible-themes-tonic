@@ -20,13 +20,13 @@ class TonicDemo extends AbstractDemo
 {
     /** @var array<string, string> Meta descriptions keyed by page path */
     protected const DESCRIPTIONS = [
+        'bar-notes' => 'Brass Hour bar notes: cocktail recipes, stories from behind the bar and what our team is drinking this season.',
         'book' => 'Book a table at Brass Hour in Hamburg-Altona for two to eight guests. Walk-ins are always welcome at the bar.',
         'careers' => 'Work at Brass Hour in Hamburg: bartenders, barbacks and hosts with fair pay, closing times before three and paid spirits training.',
         'events' => 'What\'s on at Brass Hour in Hamburg: live jazz on Wednesdays, vinyl nights, guest bartenders and Negroni Sundays.',
         'gift-cards' => 'Brass Hour gift cards for drinks, masterclasses and private tastings in Hamburg, valid for three years.',
         'ice-program' => 'Why clear ice matters: how Brass Hour freezes, cuts and carves its own ice for stirred cocktails and highballs.',
         'imprint' => 'Legal notice of Brass Hour Bar GmbH, Hamburg.',
-        'journal' => 'The Brass Hour journal: cocktail recipes, notes from behind the bar and what our team is drinking this season.',
         'low-abv' => 'Low and no alcohol cocktails at Brass Hour: how we build drinks with full flavour and less booze.',
         'masterclasses' => 'Cocktail masterclasses in Hamburg: classic cocktails, gin and botanicals, and whisky tastings in small groups at Brass Hour.',
         'menu' => 'The Brass Hour menu: signature cocktails, classics, wine by the glass, low and no alcohol drinks and bar snacks until late.',
@@ -82,7 +82,7 @@ class TonicDemo extends AbstractDemo
     ];
 
     private string $element;
-    private string $journalId;
+    private string $notesId;
     /** @var array<string, string> */
     private array $icons = [];
     private string $logoFile;
@@ -343,16 +343,16 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates the journal page and its posts below the home page.
+     * Creates the bar notes page and its posts below the home page.
      *
      * @param Page $home Home page
      * @return static Same object for fluent calls
      */
-    protected function addJournal( Page $home ) : static
+    protected function addNotes( Page $home ) : static
     {
-        $journal = $this->journal( $home );
+        $notes = $this->notes( $home );
 
-        $this->post( $journal, [
+        $this->post( $notes, [
             'name' => 'The Negroni at home',
             'title' => 'How to Make a Great Negroni at Home: Our House Recipe',
             'path' => 'negroni-at-home',
@@ -377,7 +377,7 @@ class TonicDemo extends AbstractDemo
             ],
         );
 
-        $this->post( $journal, [
+        $this->post( $notes, [
             'name' => 'Our ice program',
             'title' => 'Why Clear Ice Matters: The Brass Hour Ice Program',
             'path' => 'ice-program',
@@ -402,7 +402,7 @@ class TonicDemo extends AbstractDemo
             ],
         );
 
-        $this->post( $journal, [
+        $this->post( $notes, [
             'name' => 'Low and no',
             'title' => 'Low and No Alcohol Cocktails That Taste Like Real Drinks',
             'path' => 'low-abv',
@@ -858,7 +858,7 @@ class TonicDemo extends AbstractDemo
         return $this->element ??= $this->saveElement( 'cards', 'Brass Hour footer', ['columns' => '4', 'cards' => [
             ['title' => 'Bar', 'text' => "- [Menu](/menu)\n- [Book a table](/book)\n- [Visit us](/visit)\n- [What's on](/events)"],
             ['title' => 'Events', 'text' => "- [Private events](/private-events)\n- [Masterclasses](/masterclasses)\n- [Gift cards](/gift-cards)"],
-            ['title' => 'Brass Hour', 'text' => "- [Our story](/story)\n- [Journal](/journal)\n- [Careers](/careers)\n- [Imprint](/imprint)\n- [Privacy](/privacy)"],
+            ['title' => 'Brass Hour', 'text' => "- [Our story](/story)\n- [Bar notes](/bar-notes)\n- [Careers](/careers)\n- [Imprint](/imprint)\n- [Privacy](/privacy)"],
             ['title' => 'Newsletter', 'text' => "Guest shifts, tastings and new menus, once a month.\n\n[Sign up by email](mailto:hello@brasshour.example?subject=Newsletter)"],
         ]] );
     }
@@ -989,9 +989,9 @@ class TonicDemo extends AbstractDemo
                 'text' => "## Your night, *our room*\n\nBirthdays, launches and team nights in the Vault for up to 24 guests, or the whole bar for 120. We write a cocktail menu just for your evening.\n\n[Plan a private event](/private-events)",
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
-                'title' => 'From the journal',
+                'title' => 'From our bar notes',
                 'layout' => 'cards',
-                'parent-page' => ['value' => $this->journalId, 'label' => 'Journal'],
+                'parent-page' => ['value' => $this->notesId, 'label' => 'Bar notes'],
                 'order' => '_lft',
                 'limit' => 3,
             ]],
@@ -1052,30 +1052,31 @@ class TonicDemo extends AbstractDemo
 
 
     /**
-     * Creates the journal overview page and returns it.
+     * Creates the bar notes overview page and returns it.
      *
      * @param Page $home Home page
-     * @return Page Journal page
+     * @return Page Bar notes page
      */
-    protected function journal( Page $home ) : Page
+    protected function notes( Page $home ) : Page
     {
         return $this->page( [
-            'id' => $this->journalId,
+            'id' => $this->notesId,
             'lang' => 'en',
-            'name' => 'Journal',
-            'title' => 'Journal: Cocktail Recipes and Notes from the Bar | Brass Hour',
-            'path' => 'journal',
+            'name' => 'Bar notes',
+            'title' => 'Bar Notes: Cocktail Recipes and Stories from Behind the Bar | Brass Hour',
+            'path' => 'bar-notes',
             'type' => 'page',
             'status' => 1,
         ], [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
                 'title' => 'Notes from behind the bar',
-                'subtitle' => 'Journal',
+                'subtitle' => 'Bar notes',
                 'text' => 'Recipes to make at home, the craft behind our drinks and what our team is drinking this season.',
+                'files' => [['id' => $this->portrait( 'old-fashioned' ), 'type' => 'file']],
             ]],
-            ['id' => 'journal-list', 'type' => 'blog', 'group' => 'main', 'data' => [
+            ['id' => 'notes-list', 'type' => 'blog', 'group' => 'main', 'data' => [
                 'layout' => 'cards',
-                'parent-page' => ['value' => $this->journalId, 'label' => 'Journal'],
+                'parent-page' => ['value' => $this->notesId, 'label' => 'Bar notes'],
                 'order' => '_lft',
                 'limit' => 12,
             ]],
@@ -1165,14 +1166,14 @@ SVG;
      */
     protected function pages() : void
     {
-        $this->journalId = (string) Str::uuid7();
+        $this->notesId = (string) Str::uuid7();
         $home = $this->home();
 
         $this->addMenu( $home )
             ->addEvents( $home )
             ->addStory( $home )
             ->addVisit( $home )
-            ->addJournal( $home )
+            ->addNotes( $home )
             ->addBook( $home )
             ->addCareers( $home )
             ->addImprint( $home )
@@ -1181,9 +1182,9 @@ SVG;
 
 
     /**
-     * Creates a journal post below the journal page.
+     * Creates a post below the bar notes page.
      *
-     * @param Page $parent Journal page
+     * @param Page $parent Bar notes page
      * @param array<string, string> $data Page name, title and path
      * @param string $title Article headline
      * @param string $text Article text

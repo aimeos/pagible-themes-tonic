@@ -45,11 +45,11 @@ class TonicDemoTest extends ThemeTestAbstract
 
     public function testDemo() : void
     {
-        $journal = Page::where( 'path', 'journal' )->firstOrFail();
+        $notes = Page::where( 'path', 'bar-notes' )->firstOrFail();
         $items = Page::where( 'type', 'blog' )->get();
 
         $this->assertCount( 3, $items );
-        $this->assertTrue( $items->every( fn( $item ) => $item->parent_id === $journal->id ) );
+        $this->assertTrue( $items->every( fn( $item ) => $item->parent_id === $notes->id ) );
         $this->assertSame( 'tonic', Page::where( 'tag', 'root' )->firstOrFail()->theme );
     }
 
@@ -76,17 +76,6 @@ class TonicDemoTest extends ThemeTestAbstract
     }
 
 
-    public function testJournal() : void
-    {
-        $response = $this->get( '/journal' );
-
-        $response->assertOk();
-        $response->assertSee( 'class="list-item"', false );
-        $response->assertDontSee( '<summary class="active">Journal</summary>', false );
-        $response->assertSee( '<a href="http://localhost/journal" class="active">', false );
-    }
-
-
     public function testMenu() : void
     {
         $response = $this->get( '/menu' );
@@ -97,9 +86,21 @@ class TonicDemoTest extends ThemeTestAbstract
     }
 
 
+    public function testNotes() : void
+    {
+        $response = $this->get( '/bar-notes' );
+
+        $response->assertOk();
+        $response->assertSee( 'class="list-item"', false );
+        $response->assertSee( 'Old fashioned over a large ice cube' );
+        $response->assertDontSee( '<summary class="active">Bar notes</summary>', false );
+        $response->assertSee( '<a href="http://localhost/bar-notes" class="active">', false );
+    }
+
+
     public function testPages() : void
     {
-        foreach( ['/events', '/private-events', '/masterclasses', '/gift-cards', '/story', '/visit', '/journal', '/book', '/careers', '/imprint', '/privacy'] as $path ) {
+        foreach( ['/events', '/private-events', '/masterclasses', '/gift-cards', '/story', '/visit', '/bar-notes', '/book', '/careers', '/imprint', '/privacy'] as $path ) {
             $this->get( $path )->assertOk();
         }
 

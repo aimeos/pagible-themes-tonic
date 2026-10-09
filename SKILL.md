@@ -28,7 +28,7 @@ Use a dark, intimate layout that feels like stepping down into the bar at night.
 - Menu: `pricing` elements as menu boards, one item per section, features as list items ending with a bold price and tags such as `LOW`, `0.0`, `V` or `VG` as inline code, followed by a text element with the tag legend, the age limit and allergen note.
 - What's on: cards with a photo, the event as title and a bold first line with day and time; on the events page a vertical timeline for the weekly program.
 - Private events, masterclasses and gift cards: `pricing` elements with three items, one highlighted with a badge, and a contact form for requests.
-- Journal: `blog` pages below the journal page, each with an article, key figures, a vertical step timeline, questions and a call to action.
+- Bar notes: `blog` pages below the bar notes page (status 2, hidden in navigation), each with an article, key figures, a vertical step timeline, questions and a call to action.
 - Visit: a hero with the entrance, a table with opening hours, kitchen hours and last orders, cards for the bar areas, a map with directions and questions about walk-ins, dress code, accessibility and getting home.
 - Footer: bar, events and company links and a newsletter card; the layout adds the address, opening hours and notice from the bar config below it.
 - Bar details: the `bar` config adds the bar JSON-LD, the announcement top bar, the "Book a table" button in the header, the footer address, hours and notice and the action bar for phones.
